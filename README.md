@@ -151,3 +151,9 @@ If you use or reference this work, please cite it as a course project.
 
 ## Acknowledgment
 The authors acknowledge the contributors of the field collected cocoa image dataset and the open source libraries used in this project.
+## Team Contributions
+- Bikram Regmi: Dataset labelling, Data Agumentation, Model training, inference, and evaluation, Repository setup and final integration
+  
+- Prabhat Pouel: Dataset  labelling, Data Agumentation, Model training, inference, and evaluation
+  
+- Mina Baidhya: Dataset labelling,Data Agumentation, Model training, inference, and evaluation
