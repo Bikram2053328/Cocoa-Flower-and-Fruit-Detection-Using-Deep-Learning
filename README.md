@@ -144,6 +144,7 @@ Here are the screenshots from our experiment:
 | :---: | :---: |
 | ![AI Result](Assets/Ai_Result.jpg) | ![Time Log](Assets/Time_Log.jpg) |
 *Figure 1: Left: AI detecting flowers/pods. Right: Log showing 0.11s inference time.*
+
 ## Project Structure
 Typical output structure of the augmented dataset.
 
