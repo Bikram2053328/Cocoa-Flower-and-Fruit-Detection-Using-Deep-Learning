@@ -1,0 +1,86 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPXHUU10qklhgXN5sUY3ms2",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Bikram2053328/Cocoa-Flower-and-Fruit-Detection-Using-Deep-Learning/blob/main/requirements.txt\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pip install -r requirements.txt"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4wISXmEqR4ms",
+        "outputId": "6062c7f0-886e-4e4d-a9e7-51e49e9bbbbf"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 1)) (2.9.0+cpu)\n",
+            "Requirement already satisfied: torchvision in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 2)) (0.24.0+cpu)\n",
+            "Requirement already satisfied: numpy in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 3)) (2.0.2)\n",
+            "Requirement already satisfied: opencv-python in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 4)) (4.12.0.88)\n",
+            "Requirement already satisfied: matplotlib in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 5)) (3.10.0)\n",
+            "Requirement already satisfied: Pillow in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 6)) (11.3.0)\n",
+            "Requirement already satisfied: albumentations in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 7)) (2.0.8)\n",
+            "Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 1)) (3.20.3)\n",
+            "Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 1)) (4.15.0)\n",
+            "Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 1)) (75.2.0)\n",
+            "Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 1)) (1.14.0)\n",
+            "Requirement already satisfied: networkx>=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 1)) (3.6.1)\n",
+            "Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 1)) (3.1.6)\n",
+            "Requirement already satisfied: fsspec>=0.8.5 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 1)) (2025.3.0)\n",
+            "Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib->-r requirements.txt (line 5)) (1.3.3)\n",
+            "Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib->-r requirements.txt (line 5)) (0.12.1)\n",
+            "Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib->-r requirements.txt (line 5)) (4.61.1)\n",
+            "Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib->-r requirements.txt (line 5)) (1.4.9)\n",
+            "Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib->-r requirements.txt (line 5)) (25.0)\n",
+            "Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib->-r requirements.txt (line 5)) (3.3.1)\n",
+            "Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.12/dist-packages (from matplotlib->-r requirements.txt (line 5)) (2.9.0.post0)\n",
+            "Requirement already satisfied: scipy>=1.10.0 in /usr/local/lib/python3.12/dist-packages (from albumentations->-r requirements.txt (line 7)) (1.16.3)\n",
+            "Requirement already satisfied: PyYAML in /usr/local/lib/python3.12/dist-packages (from albumentations->-r requirements.txt (line 7)) (6.0.3)\n",
+            "Requirement already satisfied: pydantic>=2.9.2 in /usr/local/lib/python3.12/dist-packages (from albumentations->-r requirements.txt (line 7)) (2.12.3)\n",
+            "Requirement already satisfied: albucore==0.0.24 in /usr/local/lib/python3.12/dist-packages (from albumentations->-r requirements.txt (line 7)) (0.0.24)\n",
+            "Requirement already satisfied: opencv-python-headless>=4.9.0.80 in /usr/local/lib/python3.12/dist-packages (from albumentations->-r requirements.txt (line 7)) (4.12.0.88)\n",
+            "Requirement already satisfied: stringzilla>=3.10.4 in /usr/local/lib/python3.12/dist-packages (from albucore==0.0.24->albumentations->-r requirements.txt (line 7)) (4.6.0)\n",
+            "Requirement already satisfied: simsimd>=5.9.2 in /usr/local/lib/python3.12/dist-packages (from albucore==0.0.24->albumentations->-r requirements.txt (line 7)) (6.5.12)\n",
+            "Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic>=2.9.2->albumentations->-r requirements.txt (line 7)) (0.7.0)\n",
+            "Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic>=2.9.2->albumentations->-r requirements.txt (line 7)) (2.41.4)\n",
+            "Requirement already satisfied: typing-inspection>=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic>=2.9.2->albumentations->-r requirements.txt (line 7)) (0.4.2)\n",
+            "Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil>=2.7->matplotlib->-r requirements.txt (line 5)) (1.17.0)\n",
+            "Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch->-r requirements.txt (line 1)) (1.3.0)\n",
+            "Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch->-r requirements.txt (line 1)) (3.0.3)\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
