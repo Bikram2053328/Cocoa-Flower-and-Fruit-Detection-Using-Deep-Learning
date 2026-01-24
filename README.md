@@ -120,7 +120,30 @@ The most significant advantage of this pipeline is the drastic reduction in proc
 * **AI Processing Time:** 0.11 seconds
 
 > **Result:** The AI model is approximately **1,090x faster** than manual inspection. This demonstrates that the system can process large datasets in seconds, whereas manual counting would require hours of labor.
+## Performance Analysis
 
+To validate the real-world efficiency of the model, a comparative study was conducted between manual human counting and the AI model on a representative field image (Image 2.2).
+
+### 1. Detection Accuracy (Case Study)
+| Object Class | Manual Count (Ground Truth) | AI Model Detection | Accuracy vs Manual |
+| :--- | :--- | :--- | :--- |
+| **Cocoa Flowers** | 19 | 13 | 68.4% |
+| **Cocoa Pods** | 40 | 38 | **95.0%** |
+| **Total Objects** | **59** | **51** | **86.4%** |
+
+### 2. Time Efficiency
+* **Manual Counting Time:** 2 minutes (120 seconds)
+* **AI Processing Time:** 0.11 seconds
+
+> **Result:** The AI model is approximately **1,090x faster** than manual inspection.
+
+### 3. Visual Proof
+Here are the screenshots from our experiment:
+
+| AI Detection Result | Time Computation Log |
+| :---: | :---: |
+| ![AI Result](assets/AI_result.jpg) | ![Time Log](assets/time_log.jpg) |
+*Figure 1: Left: AI detecting flowers/pods. Right: Log showing 0.11s inference time.*
 ## Project Structure
 Typical output structure of the augmented dataset.
 
